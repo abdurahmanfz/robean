@@ -38,7 +38,7 @@
             </div>
             <?php if($_SESSION["user"]["role"] == "adm" ) { ?>
               <div class="card-footer bg-transparent text-right">
-                <a href='<?php echo $base_url;?>/view/galery/edit.php?id=$employee[id]'>Edit</a> | <a href='delete.php?id=$employee[id]'>Delete</a>
+                <a href="<?php echo $base_url . '/view/user-edit.php?id=' . $employee['id'] . '&origin=galery' ;?>">Edit</a> | <a href='delete.php?id=$employee[id]'>Delete</a>
               </div>
             <?php } ?>
           </div>

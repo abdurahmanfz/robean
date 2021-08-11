@@ -2,6 +2,14 @@
   require("../models/projects.php");  
   require_once("../auth.php");
 
+  function substring($string) {
+    if(strlen($string) > 100) {
+      return mb_substr($string, 0, 100, 'UTF-8') . "... see more";
+    } else {
+      return $string;
+    }
+  }
+
   if(isset($_POST['delete'])){
     $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
 
@@ -10,7 +18,7 @@
     $db->prepare("DELETE FROM projects WHERE id=?")->execute([$id]);
 
     if($db) header("Location: project.php");
-}
+  }
 ?>
 <!doctype html>
 <html lang="en">
@@ -43,7 +51,7 @@
               <img class="card-img-top" src="<?php echo $project['image']?>" alt="Card image cap" style="width: 100%; height: 220px; object-fit: cover;">
               <div class="card-body">
                 <h5 class="card-title"><?php echo $project['name']?></h5>
-                <p class="card-text"><?php echo $project['description']?></p>
+                <p class="card-text"><?php echo substring($project['description']) ?></p>
                 <p class="card-text"><small class="text-muted"><?php echo $project['client_name']?> - <?php echo $project['timestamp']?></small></p>
               </div>
               <?php if($_SESSION["user"]["role"] == "adm" ) { ?>

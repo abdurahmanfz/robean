@@ -60,7 +60,7 @@
               <td>
                 <?php if($_SESSION["user"]["role"] == "adm" ) { ?>
                   <div class="text-right">
-                    <a href='<?php echo $base_url;?>/view/user/edit.php?id=$employee[id]'>Edit</a> | <a href='delete.php?id=$employee[id]'>Delete</a>
+                    <a href="<?php echo $base_url . '/view/user-edit.php?id=' . $jadwal['id'] . '&origin=user' ;?>">Edit</a> | <a href='delete.php?id=$employee[id]'>Delete</a>
                   </div>
                 <?php } else {
                   echo "-";
