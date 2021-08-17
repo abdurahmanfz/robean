@@ -29,8 +29,8 @@
       <div class="row">
         <?php while($employee = mysqli_fetch_array($result)) { ?>
           <div class="card" style="width: 22rem; margin: 10px;">
-            <img class="card-img-top" src="../img/default.svg" alt="Card image cap" style="width: 100%; height: 220px; object-fit: cover;">
-            <!-- <img class="card-img-top" src="<?php echo $employee['photo']?>" alt="Card image cap" style="width: 100%; height: 220px; object-fit: cover;"> -->
+            <!-- <img class="card-img-top" src="../img/default.svg" alt="Card image cap" style="width: 100%; height: 220px; object-fit: cover;"> -->
+            <img class="card-img-top" src="<?php echo $employee['photo']?>" alt="Card image cap" style="width: 100%; height: 220px; object-fit: cover;">
             <div class="card-body">
               <h5 class="card-title"><?php echo $employee['name']?></h5>
               <p class="card-text mb-1"><?php echo $employee['email']?></p>

@@ -3,6 +3,8 @@
 require_once("../database/config.php");
 require_once("../auth.php");
 
+// error_reporting(0);
+
 $name = '';
 $description = '';
 $image = '';

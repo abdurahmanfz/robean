@@ -32,7 +32,9 @@
           </div>
           <div class="col">
             <h3 class="card-title"><?php echo $project['name']?></h3><br>
-            <p style="width: 80%" class="card-text"><?php echo $project['description']?></p>
+            <p style="width: 80%" class="card-text">
+            <?php echo $project['description']?>
+            </p>
             <p class="card-text"><small class="text-muted"><?php echo $project['client_name']?> - <?php echo $project['timestamp']?></small></p>
           </div>
         </div>
